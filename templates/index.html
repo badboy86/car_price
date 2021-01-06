@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Modèle de la voiture</h3>
+            <input id="first" name="Year" type="number ">
+            <h3>Prix neuf de la voiture</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>Kilométrage</h3><input id="third" name="Kms_Driven" required="required">
+             <h3>Combien de propriétaires ?</h3><br><select name="Owner" id="fourth" required="required">
+                <option value="0">Première main</option>
+                <option value="1">Deuxième main</option>
+                <option value="3">Plus</option>
+            </select>
+            <h3>Motorisation ?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Escence</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h3>Vous êtes particulier ou professionnel ?</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Professionel</option>
+                <option value="Individual">Particulier</option>
+            </select>
+            <h3>Boite à vitesse ?</h3><br><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Mannuelle</option>
+                <option value="Automatic">Automatque</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculer le prix de vente</button>
+            <br>
+        </form>
+
+{% endblock content %}
